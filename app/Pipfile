@@ -11,6 +11,3 @@ gunicorn = "21.2.*"
 
 [requires]
 python_version = "3.11"
-
-[scripts]
-dev = "python manage.py runserver 0.0.0.0:8000"
