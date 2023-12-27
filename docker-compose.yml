@@ -9,4 +9,16 @@ services:
     ports:
       - 8000:8000
     env_file:
-      - ./.env
+      - ./.env.dev
+
+  db:
+    image: postgres:16.1
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=denis
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=django_docker_dev
+
+volumes:
+  postgres_data:
