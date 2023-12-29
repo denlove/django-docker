@@ -20,10 +20,9 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - 8005:80
+      - 80:80
     depends_on:
       - web
-
 
 volumes:
   postgres_data:
