@@ -5,7 +5,7 @@ server {
     server_name denlove.ru www.denlove.ru;
         
     location / {
-        proxy_pass "http://127.0.0.1:8000";
+        proxy_pass http://web:8000;
         include proxy_params;
     }
 }
