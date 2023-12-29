@@ -1,5 +1,5 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Howdy? Tech stack: Django + nginx + PostgresQL + Gunicorn + Docker + python")
+    return render(request, "index.html")
