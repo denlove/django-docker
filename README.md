@@ -8,7 +8,7 @@ Django + PostgresQL + nginx + Gunicorn + python
 
 ## Installation with Docker Compose
 
-### 1. Give permissions to entrypoint files 
+#### 1. Give permissions to entrypoint files 
 
 ```bash
 // For dev
@@ -17,9 +17,8 @@ chmod +x app/entrypoint.sh
 // For prod
 chmod +x app/entrypoint.prod.sh
 ```
-<br/>
 
-### 2. Build and up docker compose
+#### 2. Build and up docker compose
 
 ```bash
 // For dev
@@ -28,17 +27,15 @@ docker compose up -d --build
 // For prod
 docker compose -f docker-compose.prod.yml up -d --build
 ```
-<br/>
 
-### 3. Run the migrations
+#### 3. Run the migrations
 
 ```bash
 // For prod
 docker compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 ```
-<br/>
 
-### 4. Collect static files from each of your applications 
+#### 4. Collect static files from each of your applications 
 
 ```bash
 // For prod
