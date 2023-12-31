@@ -25,12 +25,21 @@ services:
     volumes:
       - static_volume:/home/app/web/static
       - media_volume:/home/app/web/media
+      - react_app:/usr/share/nginx/html
     ports:
       - 80:80
     depends_on:
       - web
 
+  frontend:
+    build: ./frontend
+    volumes:
+      - react_app:/app/build
+    depends_on:
+      - nginx
+  
 volumes:
   postgres_data:
   static_volume:
   media_volume:
+  react_app:
