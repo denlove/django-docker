@@ -18,7 +18,17 @@ chmod +x app/entrypoint.sh
 chmod +x app/entrypoint.prod.sh
 ```
 
-#### 2. Build and up docker compose
+#### 2. Add .env file (.env.dev or .env.prod) with .env.example
+
+```bash
+// For dev
+nvim .env.dev
+
+// For prod
+nvim .env.prod
+```
+
+#### 3. Build and up docker compose
 
 ```bash
 // For dev
@@ -28,14 +38,14 @@ docker compose up -d --build
 docker compose -f docker-compose.prod.yml up -d --build
 ```
 
-#### 3. Run the migrations
+#### 4. Run the migrations
 
 ```bash
 // For prod
 docker compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 ```
 
-#### 4. Collect static files from each of your applications 
+#### 5. Collect static files from each of your applications 
 
 ```bash
 // For prod
